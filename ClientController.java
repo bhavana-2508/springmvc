@@ -7,21 +7,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ClientController {
-
-    // Task 1: Display personalized greeting message
     @RequestMapping("/greet")
     public String greet(@RequestParam("username") String username, Model model) {
         model.addAttribute("username", username);
         return "greeting";
     }
 
-    // Task 2: Render the "about" JSP file
     @RequestMapping("/about")
     public String about() {
         return "about";
     }
 
-    // Task 3: Display age and country
     @RequestMapping("/demo1")
     public String demo1(@RequestParam("age") int age, @RequestParam("country") String country, Model model) {
         model.addAttribute("age", age);
@@ -29,7 +25,6 @@ public class ClientController {
         return "demo1";
     }
 
-    // Task 4: Arithmetic operations (subtraction and division)
     @RequestMapping("/demo2/{num1}/{num2}")
     public String demo2(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model) {
         int subtraction = num1 - num2;
@@ -39,13 +34,11 @@ public class ClientController {
         return "demo2";
     }
 
-    // Task 5: Display product form
     @RequestMapping("/productform")
     public String productForm() {
         return "productform";
     }
 
-    // Task 6: Multiply numbers
     @RequestMapping("/multiplyNumbers")
     public String multiply(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model) {
         int result = num1 * num2;
@@ -53,7 +46,6 @@ public class ClientController {
         return "multiplyNumbers";
     }
 
-    // Task 7: Reverse strings
     @RequestMapping("/reverse")
     public String reverse(@RequestParam("str1") String str1, @RequestParam("str2") String str2, Model model) {
         String reversedStr1 = new StringBuilder(str1).reverse().toString();
@@ -63,7 +55,6 @@ public class ClientController {
         return "reverse";
     }
 
-    // Task 8: Subtraction and addition
     @RequestMapping("/calculate")
     public String calculate(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model) {
         int addition = num1 + num2;
