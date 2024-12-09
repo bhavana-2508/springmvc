@@ -26,7 +26,7 @@ public class ClientController {
     }
 
     @RequestMapping("/demo2/{x}/{y}")
-    public String demo2(@RequestParam("x") int num1, @RequestParam("y") int num2, Model model) {
+    public String demo2(@RequestParam("x") int x, @RequestParam("y") int y, Model model) {
         int subtraction = x - y;
         double division = y != 0 ? (double) x / y : 0;
         model.addAttribute("subtraction", subtraction);
